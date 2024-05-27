@@ -1,0 +1,10 @@
+Age: 65
+Sex: M
+Ethnicity: White
+
+Prescriptions:
+lisinopril
+losartan
+furosemide
+amlodipine
+atorvastatin

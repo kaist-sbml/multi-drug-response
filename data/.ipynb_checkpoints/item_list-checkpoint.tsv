@@ -1,0 +1,21 @@
+Item ID	Test name	Direction of signal	Unit
+50882	Bicarbonate	Low	mEq/L
+50893	Calcium	Low	mg/dL
+50902	Chloride	Low 	mEq/L
+50912	Creatinine	High	mg/dL
+50931	Glucose	High	mg/dL
+50970	Phosphate	Low	mg/dL
+50971	Potassium	Low	mEq/L
+50983	Sodium	Low	mEq/L
+51006	Urea nitrogen	High	mg/dL
+51221	Hematocrit	Low	%
+51222	Hemoglobin	Low	g/dL
+51248	MCH	High	pg
+51249	MCHC	Low	%
+51250	MCV	High	fL
+51265	Platelet count	High	K/uL
+51277	RDW	High	%
+51279	Red blood cells	Low	m/uL
+51301	White blood cells	High	K/uL
+50960	Magnesium	Low	mg/dL
+50868	Anion gap	High	mEq/L
