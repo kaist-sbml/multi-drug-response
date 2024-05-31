@@ -19,7 +19,7 @@ This project provides a model that predicts abnormal measurements based on patie
 ## Features
 
 - Predict abnormal labels based on patient information and prescribed drugs.
-- Support for three different feature types (i.e.g, active ingredients, molecular fingerprints, and drug-target protein interactions).
+- Support for three different feature types (i.e., active ingredients, molecular fingerprints, and drug-target protein interactions).
 - Save prediction results to a text file.
 
 ## Installation
