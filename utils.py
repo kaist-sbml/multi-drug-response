@@ -89,7 +89,7 @@ def generate_feature(input_text_path, feature_type):
         if each_drug in rxcui_dict:
             rxcui = str(rxcui_dict[each_drug])
             feature_dict[rxcui] = 1
-        elif each_drug in 
+
     feature_df = pd.DataFrame.from_dict(feature_dict, orient='index').T
     feature_df['AgeGroup'] =  feature_df['Age'].map(categorize_age)
 

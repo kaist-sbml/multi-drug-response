@@ -65,8 +65,9 @@ Here is a simple example of how to use the project.
 3. The prediction results will be saved in the `predictions.txt` file. Example:
     ```plaintext
     This patient is predicted to be at risk of:
+        increased glucose level in blood
+        decreased hematocrit level in blood
         increased urea nitrogen level in blood
-        
     ```
 
 ## Notes

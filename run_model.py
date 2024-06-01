@@ -59,6 +59,7 @@ if __name__ == '__main__':
     print('Loading model')
     written = False
     threshold = 0.5
+    risk_list = []
     
     with open(output_dir+'prediction.txt', 'w') as fp:
         for each_item in measurement_items:
@@ -72,11 +73,15 @@ if __name__ == '__main__':
             pred_prob = clf.predict_proba(X)
             
             if pred_prob[0, 1]>threshold:
-                fp.write('This patient is predicted to be at risk of %s %s levels.\n'# (score: %.4f)'
-                        %(dir_to_verb[item_list['Direction of signal'][int(each_item)]], item_list['Test name'][int(each_item)]))#, pred_prob)
-                written = True
+                risk_list.append(int(each_item))
                 
-        if not written:
-            fp.write('No risks were predicted for this patient.')            
+        if len(risk_list)==0:
+            fp.write('No risks were predicted for this patient.')
+            
+        else:
+            fp.write('This patient is predicted to be at risk of:\n')
+            for each_risk in risk_list:   
+                fp.write('\t%s %s level in blood\n'# (score: %.4f)'
+                        %(dir_to_verb[item_list['Direction of signal'][each_risk]], item_list['Test name'][each_risk].lower()))#, pred_prob)
             
     print('Prediction completed for %d items'%(len(measurement_items)))

@@ -1,1 +1,3 @@
-This patient is predicted to be at risk of increased Glucose levels.
+This patient is predicted to be at risk of:
+	increased glucose level in blood
+	decreased red blood cells level in blood
