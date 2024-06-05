@@ -52,12 +52,12 @@ Here is a simple example of how to use the project.
 
 1. Run `run_model.py`:
     ```bash
-    python run_model.py -i ./data/input_sample.txt -o ./results -f AI -m all
+    python run_model.py -i ./data/input_sample.txt -o ./results -f API -m all
     ```
 
     - `-i`: Path to the input file (e.g., `./data/input_sample.txt`)
     - `-o`: Output directory (e.g., `./results`)
-    - `-f`: Feature type (one of AI (recommended), MF, DTI)
+    - `-f`: Feature type (one of API (recommended), MF, DTI)
     - `-m`: Measurement item (item ID or 'all')
 
 2. You can find the measurement item IDs in `./data/item_list.tsv`.

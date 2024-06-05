@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     parser.add_argument('-i', '--input_file', required=True, help="Input file path")
     parser.add_argument('-o', '--output_dir', help="Output directory")
-    parser.add_argument('-f', '--feature_type', help="Feature type: AI, MF, DTI (Active ingredients, Molecular fingerprints, Drug-target interactions)")
+    parser.add_argument('-f', '--feature_type', help="Feature type: API, MF, DTI (Active ingredients, Molecular fingerprints, Drug-target interactions)")
     parser.add_argument('-m', '--measurement_item', help="Measurement item: 5-digit integer from Item ID column of item_list.tsv or 'all', default: urea nitrogen")
 
     options = parser.parse_args()
@@ -25,11 +25,11 @@ if __name__ == '__main__':
     dir_to_verb = {'Low': 'decreased', 'High': 'increased'}
 
     if feature_type == None:
-        feature_type = 'AI'
+        feature_type = 'API'
 
     feature_type = feature_type.upper()
-    if feature_type not in ['AI', 'MF', 'DTI']:
-        raise ValueError("feature_type should be in ['AI', 'MF', 'DTI'], current feature_type is %s"%(feature_type))
+    if feature_type not in ['API', 'MF', 'DTI']:
+        raise ValueError("feature_type should be in ['API', 'MF', 'DTI'], current feature_type is %s"%(feature_type))
 
     print('Generate input')
     
