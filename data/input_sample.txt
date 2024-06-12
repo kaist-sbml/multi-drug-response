@@ -1,6 +1,6 @@
-Age: 45
+Age: 75
 Sex: F
-Ethnicity: Asian
+Ethnicity: Hispanic
 
 Prescriptions:
 lisinopril
