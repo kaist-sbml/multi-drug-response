@@ -1,6 +1,6 @@
 # Prediction of Physiological Effects of Multiple Drugs using Electronic Health Record
 
-![overall_workflow](https://github.com/kaist-sbml/multi-drug-response/assets/170924309/e82bccb9-fe34-47f2-a074-cc78e783e580)
+![overall_workflow_0612](https://github.com/kaist-sbml/multi-drug-response/assets/170924309/19945614-6507-4d24-867c-7f8015ae3792)
 
 This project predicts which measurements will show abnormal labels for patients who have taken certain drugs within the last 24 hours. The model is trained on the MIMIC-IV clinical database and validated on the eICU collaborative research database.
 
