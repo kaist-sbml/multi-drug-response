@@ -41,7 +41,7 @@ To install and set up the project, follow these steps.
 
 2. Install the required packages:
     ```bash
-    cd PEMD
+    cd multi-drug-response
     conda env create -f environment.yml
     conda activate your_environment_name
     ```
