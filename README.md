@@ -36,7 +36,7 @@ To install and set up the project, follow these steps.
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/jhjeon-sbml/PEMD.git
+    git clone https://github.com/kaist-sbml/multi-drug-response.git
     ```
 
 2. Install the required packages:
