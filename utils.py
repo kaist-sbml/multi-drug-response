@@ -38,7 +38,7 @@ def read_input_file(file_path):
 def parse_input_text(input_text):
     age = None
     sex = None
-    eth = "other/unknown"
+    rac = "other/unknown"
     pres_list = []
         
     lines = [each_line.lower() for each_line in input_text.strip().split('\n')]
@@ -49,30 +49,30 @@ def parse_input_text(input_text):
         
         # Extract sex
         elif line.startswith('sex:'):
-            sex = line.split(':')[1].strip().upper()
-            if sex not in ['M', 'F']:
-                raise ValueError('Sex should be M or F. Current value is %s'%(sex))
+            sex = line.split(':')[1].strip()
+            if sex not in ['male', 'female']:
+                raise ValueError('Sex should be Male or Female. Current value is %s'%(sex))
         
-        # Extract ethnicity
-        elif line.startswith('ethnicity:'):
-            ethnicity = line.split(':')[1].strip()
-            if ethnicity in ['white', 'black', 'asian', 'hispanic/latino']:
-                eth = ethnicity
-            elif ethnicity in ['hispanic', 'latino']:
-                eth = 'hispanic/latino'
+        # Extract race
+        elif line.startswith('race:'):
+            race = line.split(':')[1].strip()
+            if race in ['white', 'black', 'asian', 'hispanic/latino']:
+                rac = race
+            elif race in ['hispanic', 'latino']:
+                rac = 'hispanic/latino'
             else:
-                eth = "other"
+                rac = "other"
         
         # Extract prescriptions
         elif line.startswith('prescriptions:'):
             pres_index = lines.index(line) + 1
             pres_list = [lines[i].strip() for i in range(pres_index, len(lines)) if lines[i].strip()]
 
-    return age, sex, eth, pres_list
+    return age, sex, rac, pres_list
 
 def generate_feature(input_text_path, feature_type):
     input_text = read_input_file(input_text_path)
-    age, sex, eth, pres_list = parse_input_text(input_text)
+    age, sex, rac, pres_list = parse_input_text(input_text)
     ingredients_df = pd.read_csv('./data/ingredients.csv', converters={'Fingerprint':read_as_list, 'DTI':read_as_list})
     rxcui_dict = dict(zip(ingredients_df['Name'].str.lower(), ingredients_df['RxCUI']))
     ingredients_df = ingredients_df.set_index('RxCUI', drop=True)
@@ -81,8 +81,8 @@ def generate_feature(input_text_path, feature_type):
     feature_dict = {}
     for each_column in syn_mimic.columns:
         feature_dict[each_column] = 0
-    feature_dict['Gender_%s'%(sex.upper())] = 1
-    feature_dict['Ethnicity_%s'%(eth.upper())] = 1
+    feature_dict['Sex_%s'%(sex.upper())] = 1
+    feature_dict['Race_%s'%(rac.upper())] = 1
     feature_dict['Age'] = age
 
     for each_drug in pres_list:
@@ -100,7 +100,7 @@ def generate_feature(input_text_path, feature_type):
             each_ti = np.array(ingredients_df['DTI'][rxcui], dtype=np.float64)
             ti_sum += each_ti
         ti_df = pd.DataFrame(ti_sum).T
-        ti_df = ti_df.append(feature_df.loc[:, 'Gender_F':])
+        ti_df = pd.concat([ti_df, feature_df.loc[:, 'Sex_FEMALE':]], axis=1)
         return ti_df
     
     elif feature_type == 'MF':
@@ -110,7 +110,7 @@ def generate_feature(input_text_path, feature_type):
             each_fp = np.array(ingredients_df['Fingerprint'][rxcui], dtype=np.float64)
             fp_sum += each_fp
         fp_df = pd.DataFrame(fp_sum).T
-        fp_df = fp_df.append(feature_df.loc[:, 'Gender_F':])
+        fp_df = pd.concat([fp_df, feature_df.loc[:, 'Sex_FEMALE':]], axis=1)
         return fp_df
 
     else:

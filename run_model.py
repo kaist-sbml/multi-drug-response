@@ -34,7 +34,7 @@ if __name__ == '__main__':
     print('Generate input')
     
     feature = generate_feature(input_file, feature_type)
- 
+    
     if measurement_item == None:
         measurement_item = 'all'
     
