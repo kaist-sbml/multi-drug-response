@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     print('Loading model')
     written = False
-    threshold = 0.5
+    threshold = 0.25
     risk_list = []
     
     with open(output_dir+'prediction.txt', 'w') as fp:
@@ -68,8 +68,12 @@ if __name__ == '__main__':
                 
             with open('./model/model_%s_%s.joblib'%(each_item, feature_type), 'rb') as f:
                 clf = joblib.load(f)
-    
-            X = scaler.transform(feature.values)
+
+            try:
+                X = scaler.transform(feature.values)
+            except: # match dimension
+                feature.insert(0, 'Standardize_Size', 30000000)
+                X = scaler.transform(feature.values)
             pred_prob = clf.predict_proba(X)
             
             if pred_prob[0, 1]>threshold:

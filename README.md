@@ -84,5 +84,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 If you have any questions about the project, please contact:
 
-- Name: Junhyeok Jeon
-- Email: hyuk797@kaist.ac.kr
+- Name: Hyun Uk Kim
+- Email: ehukim(at)kaist.ac.kr
