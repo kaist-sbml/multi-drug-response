@@ -1,6 +1,6 @@
 Age: 81
 Sex: Female
-Race: Black
+Race: Hispanic
 
 Prescriptions:
 sevelamer

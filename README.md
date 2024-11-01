@@ -68,7 +68,7 @@ Here is a simple example of how to use the project.
     ```plaintext
     This patient is predicted to be at risk of:
     	increased creatinine level in blood
-    	decreased hemoglobin level in blood
+    	decreased red blood cells level in blood
     ```
 
 ## Notes
