@@ -1,10 +1,11 @@
-Age: 75
+Age: 81
 Sex: Female
-Race: Hispanic
+Race: Black
 
 Prescriptions:
-lisinopril
-losartan
+sevelamer
 furosemide
-amlodipine
-atorvastatin
+potassium chloride
+folic acid
+lisinopril
+vancomycin

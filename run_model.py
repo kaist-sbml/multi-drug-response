@@ -58,7 +58,7 @@ if __name__ == '__main__':
 
     print('Loading model')
     written = False
-    threshold = 0.25
+    threshold = 0.5
     risk_list = []
     
     with open(output_dir+'prediction.txt', 'w') as fp:
