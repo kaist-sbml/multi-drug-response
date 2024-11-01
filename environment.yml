@@ -1,4 +1,4 @@
-name: test_env
+name: test_env2
 channels:
   - defaults
 dependencies:
@@ -105,4 +105,4 @@ dependencies:
   - xz=5.4.6=h5eee18b_1
   - zlib=1.2.13=h5eee18b_1
   - zstd=1.5.6=hc292b87_0
-prefix: /data/user_home/jhjeon/anaconda3/envs/test_env
+prefix: /data/user_home/jhjeon/anaconda3/envs/test_env2
